@@ -8,14 +8,16 @@ import firebase from 'firebase/compat/app'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+const { REACT_APP_FIREBASE_API_KEY, REACT_APP_FIRABASE_DOMAIN, REACT_APP_DATABASE_URL, REACT_APP_APP_ID } = process.env;
+
 firebase.initializeApp({
-  apiKey: "AIzaSyAiFEf5B5rDt_a6oQlSAOId954459nKugk",
-  authDomain: "trelloapp-4d111.firebaseapp.com",
-  databaseURL: "https://trelloapp-4d111-default-rtdb.firebaseio.com",
+  apiKey: REACT_APP_FIREBASE_API_KEY,
+  authDomain: REACT_APP_FIRABASE_DOMAIN,
+  databaseURL: REACT_APP_DATABASE_URL,
   projectId: "trelloapp-4d111",
   storageBucket: "trelloapp-4d111.appspot.com",
   messagingSenderId: "951105192069",
-  appId: "1:951105192069:web:0d0b54047ee5ed3006a9ec"
+  appId: REACT_APP_APP_ID
 });
 
 const auth = getAuth();
